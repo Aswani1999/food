@@ -1,0 +1,100 @@
+{% extends 'customer/base.html' %}
+
+{% block content %}
+<div class="container mb-5">
+    <div class="row justify-content-center mt-1">
+        <div class="col-md-12 col-sm-12 p-4">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="pt-5">
+                    {% for biriyani in biriyani %}
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ biriyani.image.url }}" width="150" height="100"/>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="items[]" class="form-check-input" value="{{ biriyani.pk }}">
+                                    <label class="form-check-label">{{ biriyani.name }}</label>
+                                </div>
+                                <p class="font-weight-bold pl-5">{{ biriyani.price }}</p>
+                            </div>
+                            <p>{{ biriyani.description }}</p>
+                        </div>
+                    </div>
+                    <hr />
+                {% endfor %}
+                </div>
+
+                <div class="pt-5">
+                    {% for kappa in kappa %}
+                    <div class="row mt-4">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ kappa.image.url }}" width="150" height="100"/>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="items[]" class="form-check-input" value="{{ kappa.pk }}">
+                                    <label class="form-check-label">{{ kappa.name }}</label>
+                                </div>
+                                <p class="font-weight-bold pl-5">{{ kappa.price }}</p>
+                            </div>
+                            <p>{{ kappa.description }}</p>
+                        </div>
+                    </div>
+                    <hr />
+                    {% endfor %}
+                </div>
+
+                <div class="pt-5">
+                    {% for fish in fish %}
+                    <div class="row mt-4">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ fish.image.url }}" width="150" height="100"/>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="items[]" class="form-check-input" value="{{ fish.pk }}">
+                                    <label class="form-check-label">{{ fish.name }}</label>
+                                </div>
+                                <p class="font-weight-bold pl-5">{{ fish.price }}</p>
+                            </div>
+                            <p>{{ fish.description }}</p>
+                        </div>
+                    </div>
+                    <hr />
+                    {% endfor %}
+                </div>
+
+                <div class="pt-5">
+                    {% for chicken in chicken %}
+                    <div class="row mt-4">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ chicken.image.url }}" width="150" height="100"/>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="items[]" class="form-check-input" value="{{ chicken.pk }}">
+                                    <label class="form-check-label">{{ chicken.name }}</label>
+                                </div>
+                                <p class="font-weight-bold pl-5">{{ chicken.price }}</p>
+                            </div>
+                            <p>{{ chicken.description }}</p>
+                        </div>
+                    </div>
+                    <hr />
+                    {% endfor %}
+                </div>
+
+             
+
+                <button type="submit" class="btn btn-dark mt-5">Next</button>
+            </form>
+        </div>
+    </div>
+</div> 
+{% endblock content %}

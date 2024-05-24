@@ -1,0 +1,56 @@
+
+{% extends 'customer/base.html' %}
+
+{% block content %}
+{% csrf_token %}
+<div class="container mb-5">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
+            <h1>Home Food Delivery Service</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-1">
+        <div class="card col-md-5 col-sm-12 offset-md-1 p-4 text-center">
+            <h2>Choose a restaurant</h2>
+            <ul class="list-unstyled">
+                <li style="list-style: none; margin-bottom: 20px;">
+                    <a href="{% url 'order' %}?restaurant=restaurant1" class="restaurant-link">
+                        <div style="display: flex; align-items: center;">
+                            <img src="media/menu_images/resturant2.jpg" alt="Restaurant 1" style="width: 100px; height: auto; margin-right: 10px;">
+                            <div>
+                                <h3 style="margin: 0; color: red; font-family: Arial, sans-serif;">Amma's Kitchen</h3>
+                                <p style="font-weight: bold; color: blue; margin: 0;">10% off</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li style="list-style: none; margin-bottom: 20px;">
+                    <a href="{% url 'order' %}?restaurant=restaurant2" class="restaurant-link">
+                        <div style="display: flex; align-items: center;">
+                            <img src="media/menu_images/resturant3.jpg" alt="Restaurant 2" style="width: 100px; height: auto; margin-right: 10px;">
+                            <div>
+                                <h3 style="margin: 0; color: red; font-family: Arial, sans-serif;">Veetile Oonu</h3>
+                                <p style="font-weight: bold; color: blue; margin: 0;">10% off</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li style="list-style: none; margin-bottom: 20px;">
+                    <a href="{% url 'order' %}?restaurant=restaurant3" class="restaurant-link">
+                        <div style="display: flex; align-items: center;">
+                            <img src="media/menu_images/sadhya.jpg" alt="Restaurant 3" style="width: 100px; height: auto; margin-right: 10px;">
+                            <div>
+                                <h3 style="margin: 0; color: red; font-family: Arial, sans-serif;">Vanitha Home</h3>
+                                <p style="font-weight: bold; color: blue; margin: 0;">30% off</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
