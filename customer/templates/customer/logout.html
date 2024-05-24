@@ -1,0 +1,13 @@
+{% extends 'customer/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 col-sm-12 p-4 text-center">
+            <h1>Logout Successful</h1>
+            <p>You have been logged out. Thank you for visiting!</p>
+            <a href="{% url 'new_login' %}" class="btn btn-primary">Login Again</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
